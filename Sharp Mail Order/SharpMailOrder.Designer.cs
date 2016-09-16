@@ -30,8 +30,6 @@
         {
             this.NameLabel = new System.Windows.Forms.Label();
             this.IdLabel = new System.Windows.Forms.Label();
-            this.HoursWorkedLabel = new System.Windows.Forms.Label();
-            this.MonthlySalesLabel = new System.Windows.Forms.Label();
             this.EmployeeNameTextBox = new System.Windows.Forms.TextBox();
             this.TotalHoursWorkedTextBox = new System.Windows.Forms.TextBox();
             this.TotalMonthlySalesTextBox = new System.Windows.Forms.TextBox();
@@ -46,6 +44,8 @@
             this.BonusLabel = new System.Windows.Forms.Label();
             this.BonusTextBox = new System.Windows.Forms.TextBox();
             this.PrintButton = new System.Windows.Forms.Button();
+            this.TotalHoursLabel = new System.Windows.Forms.RichTextBox();
+            this.TotalSalesLabel = new System.Windows.Forms.RichTextBox();
             this.LanguageGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.LogoPictureBox)).BeginInit();
             this.SuspendLayout();
@@ -53,7 +53,7 @@
             // NameLabel
             // 
             this.NameLabel.AutoSize = true;
-            this.NameLabel.Location = new System.Drawing.Point(26, 32);
+            this.NameLabel.Location = new System.Drawing.Point(26, 38);
             this.NameLabel.Name = "NameLabel";
             this.NameLabel.Size = new System.Drawing.Size(87, 13);
             this.NameLabel.TabIndex = 0;
@@ -67,24 +67,6 @@
             this.IdLabel.Size = new System.Drawing.Size(70, 13);
             this.IdLabel.TabIndex = 1;
             this.IdLabel.Text = "Employee ID:";
-            // 
-            // HoursWorkedLabel
-            // 
-            this.HoursWorkedLabel.AutoSize = true;
-            this.HoursWorkedLabel.Location = new System.Drawing.Point(7, 58);
-            this.HoursWorkedLabel.Name = "HoursWorkedLabel";
-            this.HoursWorkedLabel.Size = new System.Drawing.Size(106, 13);
-            this.HoursWorkedLabel.TabIndex = 2;
-            this.HoursWorkedLabel.Text = "Total Hours Worked:";
-            // 
-            // MonthlySalesLabel
-            // 
-            this.MonthlySalesLabel.AutoSize = true;
-            this.MonthlySalesLabel.Location = new System.Drawing.Point(10, 84);
-            this.MonthlySalesLabel.Name = "MonthlySalesLabel";
-            this.MonthlySalesLabel.Size = new System.Drawing.Size(103, 13);
-            this.MonthlySalesLabel.TabIndex = 3;
-            this.MonthlySalesLabel.Text = "Total Monthly Sales:";
             // 
             // EmployeeNameTextBox
             // 
@@ -104,7 +86,7 @@
             // 
             // TotalMonthlySalesTextBox
             // 
-            this.TotalMonthlySalesTextBox.Location = new System.Drawing.Point(156, 87);
+            this.TotalMonthlySalesTextBox.Location = new System.Drawing.Point(156, 98);
             this.TotalMonthlySalesTextBox.Name = "TotalMonthlySalesTextBox";
             this.TotalMonthlySalesTextBox.Size = new System.Drawing.Size(100, 20);
             this.TotalMonthlySalesTextBox.TabIndex = 6;
@@ -184,6 +166,7 @@
             this.ClearButton.TabIndex = 12;
             this.ClearButton.Text = "Clear";
             this.ClearButton.UseVisualStyleBackColor = true;
+            this.ClearButton.Click += new System.EventHandler(this.ClearButton_Click);
             // 
             // LogoPictureBox
             // 
@@ -221,11 +204,33 @@
             this.PrintButton.UseVisualStyleBackColor = true;
             this.PrintButton.Click += new System.EventHandler(this.PrintButton_Click);
             // 
+            // TotalHoursLabel
+            // 
+            this.TotalHoursLabel.BackColor = System.Drawing.SystemColors.Menu;
+            this.TotalHoursLabel.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.TotalHoursLabel.Location = new System.Drawing.Point(12, 64);
+            this.TotalHoursLabel.Name = "TotalHoursLabel";
+            this.TotalHoursLabel.Size = new System.Drawing.Size(117, 34);
+            this.TotalHoursLabel.TabIndex = 17;
+            this.TotalHoursLabel.Text = "Total Hours Worked:";
+            // 
+            // TotalSalesLabel
+            // 
+            this.TotalSalesLabel.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.TotalSalesLabel.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.TotalSalesLabel.Location = new System.Drawing.Point(12, 101);
+            this.TotalSalesLabel.Name = "TotalSalesLabel";
+            this.TotalSalesLabel.Size = new System.Drawing.Size(117, 36);
+            this.TotalSalesLabel.TabIndex = 18;
+            this.TotalSalesLabel.Text = "Total Monthly Sales:";
+            // 
             // SharpMailOrder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(452, 237);
+            this.Controls.Add(this.TotalSalesLabel);
+            this.Controls.Add(this.TotalHoursLabel);
             this.Controls.Add(this.PrintButton);
             this.Controls.Add(this.BonusTextBox);
             this.Controls.Add(this.BonusLabel);
@@ -237,8 +242,6 @@
             this.Controls.Add(this.TotalMonthlySalesTextBox);
             this.Controls.Add(this.TotalHoursWorkedTextBox);
             this.Controls.Add(this.EmployeeNameTextBox);
-            this.Controls.Add(this.MonthlySalesLabel);
-            this.Controls.Add(this.HoursWorkedLabel);
             this.Controls.Add(this.IdLabel);
             this.Controls.Add(this.NameLabel);
             this.Name = "SharpMailOrder";
@@ -255,8 +258,6 @@
 
         private System.Windows.Forms.Label NameLabel;
         private System.Windows.Forms.Label IdLabel;
-        private System.Windows.Forms.Label HoursWorkedLabel;
-        private System.Windows.Forms.Label MonthlySalesLabel;
         private System.Windows.Forms.TextBox EmployeeNameTextBox;
         private System.Windows.Forms.TextBox TotalHoursWorkedTextBox;
         private System.Windows.Forms.TextBox TotalMonthlySalesTextBox;
@@ -271,6 +272,8 @@
         private System.Windows.Forms.Label BonusLabel;
         private System.Windows.Forms.TextBox BonusTextBox;
         private System.Windows.Forms.Button PrintButton;
+        private System.Windows.Forms.RichTextBox TotalHoursLabel;
+        private System.Windows.Forms.RichTextBox TotalSalesLabel;
     }
 }
 
