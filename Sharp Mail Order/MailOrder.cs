@@ -10,9 +10,16 @@ using System.Windows.Forms;
 
 namespace Sharp_Mail_Order
 {
-    public partial class SharpMailOrder : Form
+    /// <summary>
+    /// Program: Sharp Mail Order Form
+    /// Author: Logan Sikora-Beder
+    /// App Creation Date: Sometime between Sept 14-18
+    /// Description: This will take a bunch of factors and help output the desired bonus based on 
+    /// monthly earings and hours
+    /// </summary>
+    public partial class MailOrder : Form
     {
-        public SharpMailOrder()
+        public MailOrder()
         {
             InitializeComponent();
         }
@@ -105,7 +112,25 @@ namespace Sharp_Mail_Order
         /// <param name="e"></param>
         private void CalculateButton_Click(object sender, EventArgs e)
         {
+            try
+            {
+                double HoursWorked;
+                double TotalSales;
+                double SalesBonus;
 
+                HoursWorked = Convert.ToDouble(TotalHoursWorkedTextBox.Text);
+                TotalSales = Convert.ToDouble(TotalMonthlySalesTextBox.Text);
+
+                SalesBonus = (HoursWorked / 160) * (TotalSales * 0.02);
+                BonusTextBox.Text = SalesBonus.ToString("C2");
+
+
+            }
+            catch (Exception wrong)
+            {
+
+                MessageBox.Show("These all need to be numbers, and total hours worked can't be more than 160 hours!", "You blew it.");
+            }
         }
         /// <summary>
         /// This will clear all of the textboxes so you can put stuff in them again
@@ -116,7 +141,6 @@ namespace Sharp_Mail_Order
         {
             EmployeeIdTextBox.Text = "";
             EmployeeNameTextBox.Text = "";
-            TotalMonthlySalesTextBox.Text = "";
             TotalHoursWorkedTextBox.Text = "";
             BonusTextBox.Text = "";
         }

@@ -1,6 +1,6 @@
 ﻿namespace Sharp_Mail_Order
 {
-    partial class SharpMailOrder
+    partial class MailOrder
     {
         /// <summary>
         /// Required designer variable.
