@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MailOrder));
             this.NameLabel = new System.Windows.Forms.Label();
             this.IdLabel = new System.Windows.Forms.Label();
             this.EmployeeNameTextBox = new System.Windows.Forms.TextBox();
@@ -170,9 +171,11 @@
             // 
             // LogoPictureBox
             // 
+            this.LogoPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("LogoPictureBox.Image")));
             this.LogoPictureBox.Location = new System.Drawing.Point(297, 114);
             this.LogoPictureBox.Name = "LogoPictureBox";
             this.LogoPictureBox.Size = new System.Drawing.Size(143, 107);
+            this.LogoPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.LogoPictureBox.TabIndex = 13;
             this.LogoPictureBox.TabStop = false;
             // 
@@ -224,7 +227,7 @@
             this.TotalSalesLabel.TabIndex = 18;
             this.TotalSalesLabel.Text = "Total Monthly Sales:";
             // 
-            // SharpMailOrder
+            // MailOrder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -244,7 +247,7 @@
             this.Controls.Add(this.EmployeeNameTextBox);
             this.Controls.Add(this.IdLabel);
             this.Controls.Add(this.NameLabel);
-            this.Name = "SharpMailOrder";
+            this.Name = "MailOrder";
             this.Text = "Sharp Mail Order";
             this.LanguageGroupBox.ResumeLayout(false);
             this.LanguageGroupBox.PerformLayout();

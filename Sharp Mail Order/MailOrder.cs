@@ -44,7 +44,6 @@ namespace Sharp_Mail_Order
             EmployeeNameTextBox.Text = "Enter Text...";
             TotalMonthlySalesTextBox.Text = "Enter Text...";
             TotalHoursWorkedTextBox.Text = "Enter Text...";
-            BonusTextBox.Text = "Enter Text...";
         }
         /// <summary>
         /// Radio button that turns things russian
@@ -68,7 +67,6 @@ namespace Sharp_Mail_Order
             EmployeeNameTextBox.Text = "Vvedite tekst ...";
             TotalMonthlySalesTextBox.Text = "Vvedite tekst ...";
             TotalHoursWorkedTextBox.Text = "Vvedite tekst ...";
-            BonusTextBox.Text = "Vvedite tekst ...";
         }
         /// <summary>
         /// Everything becomes quebec when you touch this button of radio
@@ -91,7 +89,6 @@ namespace Sharp_Mail_Order
             EmployeeNameTextBox.Text = "Entrez du texte...";
             TotalMonthlySalesTextBox.Text = "Entrez du texte...";
             TotalHoursWorkedTextBox.Text = "Entrez du texte...";
-            BonusTextBox.Text = "Entrez du texte...";
 
         }
         /// <summary>
@@ -120,9 +117,17 @@ namespace Sharp_Mail_Order
 
                 HoursWorked = Convert.ToDouble(TotalHoursWorkedTextBox.Text);
                 TotalSales = Convert.ToDouble(TotalMonthlySalesTextBox.Text);
+                //Makes sure that hours arent too high
+                if (HoursWorked > 160)
+                {
+                    MessageBox.Show("Sorry, Hours Worked cannot be over 160!", "Too much overtime yo!");
+                }
+                else
+                {
 
-                SalesBonus = (HoursWorked / 160) * (TotalSales * 0.02);
-                BonusTextBox.Text = SalesBonus.ToString("C2");
+                    SalesBonus = (HoursWorked / 160) * (TotalSales * 0.02);
+                    BonusTextBox.Text = SalesBonus.ToString("C2");
+                }
 
 
             }
