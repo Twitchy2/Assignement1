@@ -111,12 +111,15 @@ namespace Sharp_Mail_Order
         {
             try
             {
+
                 double HoursWorked;
                 double TotalSales;
                 double SalesBonus;
+                double employeeId;
 
                 HoursWorked = Convert.ToDouble(TotalHoursWorkedTextBox.Text);
                 TotalSales = Convert.ToDouble(TotalMonthlySalesTextBox.Text);
+                employeeId = Convert.ToDouble(EmployeeIdTextBox.Text);
                 //Makes sure that hours arent too high
                 if (HoursWorked > 160)
                 {
@@ -134,7 +137,7 @@ namespace Sharp_Mail_Order
             catch (Exception wrong)
             {
 
-                MessageBox.Show("These all need to be numbers, and total hours worked can't be more than 160 hours!", "You blew it.");
+                MessageBox.Show("The Hours worked, Employee ID and Monthly Sales need to be numbers, and total hours worked can't be more than 160 hours!", "You blew it.");
             }
         }
         /// <summary>

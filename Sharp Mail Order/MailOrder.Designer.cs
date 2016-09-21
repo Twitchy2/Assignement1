@@ -120,7 +120,6 @@
             this.CykaRadioButton.Name = "CykaRadioButton";
             this.CykaRadioButton.Size = new System.Drawing.Size(62, 17);
             this.CykaRadioButton.TabIndex = 2;
-            this.CykaRadioButton.TabStop = true;
             this.CykaRadioButton.Text = "Russkiy";
             this.CykaRadioButton.UseVisualStyleBackColor = true;
             this.CykaRadioButton.CheckedChanged += new System.EventHandler(this.CykaRadioButton_CheckedChanged);
@@ -132,7 +131,6 @@
             this.FrenchRadioButton.Name = "FrenchRadioButton";
             this.FrenchRadioButton.Size = new System.Drawing.Size(65, 17);
             this.FrenchRadioButton.TabIndex = 1;
-            this.FrenchRadioButton.TabStop = true;
             this.FrenchRadioButton.Text = "Français";
             this.FrenchRadioButton.UseVisualStyleBackColor = true;
             this.FrenchRadioButton.CheckedChanged += new System.EventHandler(this.FrenchRadioButton_CheckedChanged);
@@ -140,6 +138,7 @@
             // EnglishRadioButton
             // 
             this.EnglishRadioButton.AutoSize = true;
+            this.EnglishRadioButton.Checked = true;
             this.EnglishRadioButton.Location = new System.Drawing.Point(21, 18);
             this.EnglishRadioButton.Name = "EnglishRadioButton";
             this.EnglishRadioButton.Size = new System.Drawing.Size(59, 17);
