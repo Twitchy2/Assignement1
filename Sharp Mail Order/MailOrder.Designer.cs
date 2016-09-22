@@ -246,8 +246,12 @@
             this.Controls.Add(this.EmployeeNameTextBox);
             this.Controls.Add(this.IdLabel);
             this.Controls.Add(this.NameLabel);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
             this.Name = "MailOrder";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Sharp Mail Order";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MailOrder_FormClosing);
             this.LanguageGroupBox.ResumeLayout(false);
             this.LanguageGroupBox.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.LogoPictureBox)).EndInit();

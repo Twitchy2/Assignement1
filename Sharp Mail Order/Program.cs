@@ -16,7 +16,7 @@ namespace Sharp_Mail_Order
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MailOrder());
+            Application.Run(new SplashForm());
         }
     }
 }

@@ -111,6 +111,10 @@ namespace Sharp_Mail_Order
         {
             try
             {
+                if (EmployeeNameTextBox.Text == String.Empty)
+                {
+                    MessageBox.Show("Put in a name please", "I hope you work here");
+                } else { 
 
                 double HoursWorked;
                 double TotalSales;
@@ -120,18 +124,26 @@ namespace Sharp_Mail_Order
                 HoursWorked = Convert.ToDouble(TotalHoursWorkedTextBox.Text);
                 TotalSales = Convert.ToDouble(TotalMonthlySalesTextBox.Text);
                 employeeId = Convert.ToDouble(EmployeeIdTextBox.Text);
-                //Makes sure that hours arent too high
-                if (HoursWorked > 160)
-                {
-                    MessageBox.Show("Sorry, Hours Worked cannot be over 160!", "Too much overtime yo!");
-                }
-                else
-                {
-
-                    SalesBonus = (HoursWorked / 160) * (TotalSales * 0.02);
-                    BonusTextBox.Text = SalesBonus.ToString("C2");
-                }
-
+                    //make sure there is something in total sales
+                    if (TotalSales < 0)
+                    {
+                        MessageBox.Show("Sales have to be more than 0 you know.", "Else whats the point of a bonus?");
+                    }
+                    else
+                    {
+                        //Makes sure that hours arent too high
+                        if ((HoursWorked > 160) || (HoursWorked < 0))
+                        {
+                            MessageBox.Show("Sorry, Hours Worked cannot be over 160!", "Too much overtime yo!");
+                        }
+                        else
+                        {
+                            SalesBonus = (HoursWorked / 160) * (TotalSales * 0.02);
+                            BonusTextBox.Text = SalesBonus.ToString("C2");
+                        }
+                    }
+            }
+                
 
             }
             catch (Exception wrong)
@@ -151,6 +163,11 @@ namespace Sharp_Mail_Order
             EmployeeNameTextBox.Text = "";
             TotalHoursWorkedTextBox.Text = "";
             BonusTextBox.Text = "";
+        }
+
+        private void MailOrder_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }
